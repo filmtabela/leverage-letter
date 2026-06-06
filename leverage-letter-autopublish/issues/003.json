@@ -1,0 +1,32 @@
+{
+  "issue_number": 3,
+  "subject": "Your Inbox Is Not a To-Do List",
+  "preview_text": "Stop managing email. Start automating it. Here's the exact setup.",
+
+  "big_idea": {
+    "headline": "Email Was Designed to Send Information. You've Turned It Into a Second Job.",
+    "body": "The average knowledge worker checks email 77 times a day. That's not productivity — that's a reflex. The real problem isn't email volume; it's that most people treat every message as requiring a manual response, a manual sort, and a manual follow-up. AI changes this entirely. With the right setup, 60–70% of routine email — confirmations, FAQs, status updates, follow-up nudges — can be drafted or handled automatically. You stop reacting and start reviewing.",
+    "highlight": "Your inbox should surface decisions. Everything else should be automated."
+  },
+
+  "tool": {
+    "name": "Zapier + Gmail + Claude/ChatGPT",
+    "tagline": "Build an AI email triage and draft system in under an hour",
+    "description": "Connect Gmail to Zapier, trigger on incoming email, pass the content to Claude or ChatGPT via API, and auto-draft a reply that lands in your Drafts folder — ready to review and send in one click. You can also auto-label, auto-archive, and auto-forward based on AI classification. No code required.",
+    "best_for": "Anyone receiving 50+ emails/day with repetitive patterns (inquiries, follow-ups, status requests)",
+    "free_tier": "Zapier free tier covers basic automation; Gmail and Claude/ChatGPT API costs are minimal",
+    "url": "https://zapier.com"
+  },
+
+  "prompt": {
+    "context": "Use this prompt inside your Zapier automation (or manually) to draft professional replies instantly:",
+    "text": "You are my professional email assistant.\n\nHere is an email I received:\n---\nFrom: {{sender}}\nSubject: {{subject}}\nBody: {{email_body}}\n---\n\nDraft a reply that:\n- Is professional and warm but brief (under 100 words)\n- Addresses the core question or request directly\n- Ends with a clear next step or call to action\n- Does NOT use filler phrases like 'I hope this email finds you well'\n\nReturn only the email body. No subject line needed.",
+    "why_it_works": "The 100-word constraint forces the AI to be direct. The 'no filler' instruction removes the robotic opener that makes AI emails obvious. The result reads like you wrote it — just faster."
+  },
+
+  "stat": {
+    "number": "77×",
+    "label": "Average daily email checks per knowledge worker",
+    "context": "Every check is a context switch. Every context switch costs 23 minutes of deep focus to recover from (per UC Irvine research). If you check email 20 fewer times per day using automation, you're not just saving 20 minutes — you're recovering hours of productive thinking time."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "issue_number": 2,
+  "subject": "The Meeting That Runs Itself",
+  "preview_text": "One AI setup that eliminates 3 hours of meeting admin every week.",
+
+  "big_idea": {
+    "headline": "Meetings Don't Waste Time. The Work Around Meetings Does.",
+    "body": "The average professional spends 4.5 hours per week preparing for, summarising, and following up on meetings. The meeting itself is rarely the problem — it's the 90 minutes before and after that nobody accounts for. AI doesn't eliminate meetings. But it can eliminate almost everything around them: agenda drafting, note-taking, action item extraction, and follow-up emails. Done right, you walk in, you talk, you walk out — and the documentation handles itself.",
+    "highlight": "The goal isn't fewer meetings. It's zero meeting admin."
+  },
+
+  "tool": {
+    "name": "Otter.ai",
+    "tagline": "Automatic transcription, summaries, and action items from every call",
+    "description": "Otter joins your Google Meet, Zoom, or Teams call automatically. It transcribes in real-time, highlights action items, and generates a summary you can share within minutes of hanging up. No more 'can someone take notes' — Otter is always taking notes.",
+    "best_for": "Founders, consultants, and team leads running 5+ meetings per week",
+    "free_tier": "Yes — 300 minutes/month free",
+    "url": "https://otter.ai"
+  },
+
+  "prompt": {
+    "context": "Paste this into ChatGPT or Claude after your next meeting. Give it your raw notes or Otter transcript and watch it do the admin:",
+    "text": "You are a professional executive assistant.\n\nI just finished a meeting. Here are the raw notes/transcript:\n[PASTE NOTES HERE]\n\nPlease produce:\n1. A 3-sentence meeting summary\n2. A bulleted list of action items with owner names and deadlines\n3. A ready-to-send follow-up email to all participants\n\nTone: professional, concise, no filler.",
+    "why_it_works": "This prompt forces structure. Most people paste notes and hope for the best — this tells the AI exactly what format to return, so you get output you can use immediately without editing."
+  },
+
+  "stat": {
+    "number": "4.5 hrs",
+    "label": "Per week lost to meeting admin — per person",
+    "context": "That's 234 hours a year. Nearly 6 full work weeks. Across a 10-person team, that's 2,340 hours — the equivalent of hiring a full-time employee just to handle meeting paperwork. AI eliminates most of it."
+  }
+}
