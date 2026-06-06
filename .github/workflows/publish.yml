@@ -1,0 +1,42 @@
+name: Leverage Letter — Auto Publish
+
+on:
+  schedule:
+    - cron: "30 4 * * 2"
+  workflow_dispatch:
+    inputs:
+      issue_file:
+        description: "Issue file to publish (e.g. issues/002.json). Leave blank for issues/next.json"
+        required: false
+        default: ""
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Publish issue
+        env:
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+        run: |
+          if [ -n "${{ github.event.inputs.issue_file }}" ]; then
+            node leverage-letter-autopublish/publish.js "${{ github.event.inputs.issue_file }}"
+          else
+            node leverage-letter-autopublish/publish.js
+          fi
+
+      - name: Commit archived issue
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add leverage-letter-autopublish/issues/sent/ || true
+          git diff --staged --quiet || git commit -m "📧 Auto-published issue $(date +'%Y-%m-%d')"
+          git push
